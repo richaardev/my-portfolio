@@ -12,7 +12,7 @@ export default function Home() {
       </span>
       <div className="flex mt-3 gap-3">
         {social_medias.map(({ icon: IconComponent, href }) => (
-          <Link key={href} href={href} className="box-border border-2 border-zinc-200 rounded-md p-1.5">
+          <Link key={href} href={href} className="box-border border-2 border-zinc-200 dark:border-zinc-800 rounded-md p-1.5">
             <span>
               <IconComponent size={24} />
             </span>
