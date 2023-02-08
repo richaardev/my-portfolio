@@ -10,11 +10,7 @@ module.exports = {
     fontFamily: {
       "sans": ["Fira Code", "monospace"]
     },
-    extend: {
-      maxHeight: {
-        128: "45rem"
-      }
-    },
+    extend: {},
   },
   plugins: []
 }
