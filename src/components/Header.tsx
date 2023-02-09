@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useDarkMode } from "../hooks/useDarkMode";
-import { BsFillMoonFill, BsSunFill } from "react-icons/bs"
+import { BsFillMoonFill, BsSunFill } from "react-icons/bs";
 
 export const Header: React.FC = () => {
   const [darkMode, setDarkMode] = useDarkMode();
