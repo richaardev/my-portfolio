@@ -15,6 +15,7 @@ export default function Home() {
           <Link
             key={href}
             href={href}
+            target="_blank"
             className="box-border border-2 border-zinc-200 dark:border-zinc-800 rounded-md p-1.5"
           >
             <IconComponent size={24} />
