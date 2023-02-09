@@ -8,15 +8,15 @@ export const Header: React.FC = () => {
   const [darkMode, setDarkMode] = useDarkMode();
 
   return (
-    <header className="fixed w-full box-border border-b-2 border-zinc-200 dark:border-zinc-800 bg-transparent backdrop-blur-sm">
-      <div className="flex justify-between items-center max-w-5xl mx-auto px-4 h-16 md:px-16">
+    <header className="box-border fixed w-full bg-transparent border-b-2 border-zinc-200 dark:border-zinc-800 backdrop-blur-sm">
+      <div className="flex items-center justify-between h-16 max-w-5xl px-4 mx-auto md:px-16">
         <div className="">
-          <span className="text-xl font-semibold">richaardev</span>
+          <span className="text-xl font-semibold select-none">richaardev</span>
         </div>
         <div>
-          <label className="block overflow-hidden w-9 h-9 border-2 border-zinc-200 dark:border-zinc-800 rounded-md cursor-pointer">
+          <label className="block overflow-hidden border-2 rounded-md cursor-pointer w-9 h-9 border-zinc-200 dark:border-zinc-800">
             <input
-              className="peer hidden"
+              className="hidden peer"
               type="checkbox"
               checked={darkMode}
               onChange={(e) => setDarkMode(e.target.checked)}

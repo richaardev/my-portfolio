@@ -9,7 +9,7 @@ html {
 }
 
 * {
-  transition-property: border-color;
+  transition-property: border-color, background-color;
   transition-duration: 300ms;
 }
 
