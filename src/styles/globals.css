@@ -8,6 +8,11 @@ html {
   @apply scroll-smooth;
 }
 
+* {
+  transition-property: border-color;
+  transition-duration: 300ms;
+}
+
 body {
   @apply bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 transition-colors duration-300;
 }
