@@ -1,7 +1,11 @@
 import type { IconType } from "react-icons";
-import { FaDiscord, FaGithub } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default <SocialMedia[]>[
+  {
+    icon: FaEnvelope,
+    href: "mailto:me@richaar.dev"
+  },
   {
     icon: FaGithub,
     href: "https://github.com/richaardev",
