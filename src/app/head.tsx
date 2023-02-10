@@ -5,6 +5,7 @@ export default function Head() {
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link rel="icon" href="/favicon.ico" />
 
+      <meta property="og:site_name" content="richaardev's website" />
       <meta property="og:title" content="richaardev" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://richaar.dev" />
