@@ -5,7 +5,8 @@ export function useDarkMode(): [boolean, Function] {
   if (typeof window == "undefined") return [false, () => {}];
 
   const [enabledState, setEnabledState] = useLocalStorage("dark-mode-enabled");
-  const prefersDarkMode = false; //window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  // if not exists in local storage
   const enabled = typeof enabledState !== "undefined" ? Boolean(enabledState) : prefersDarkMode;
 
   useEffect(() => {
