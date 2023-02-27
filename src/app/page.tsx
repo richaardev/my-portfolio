@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaGithub, FaLink } from "react-icons/fa";
 import projects from "../data/projects";
 import social_medias from "../data/social_medias";
-import "../styles/globals.css";
+import "./globals.css";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <div className="border-b-2 border-zinc-200 dark:border-zinc-800">
         <div className="flex flex-col justify-center max-w-5xl min-h-screen px-4 py-16 mx-auto md:px-16">
           <h1 className="font-medium text-md sm:text-2xl">Howdly!</h1>
-          <h2 className="text-2xl font-bold sm:text-4xl">I'm richaardev</h2>
+          <h2 className="text-2xl font-bold sm:text-4xl">I&apos;m richaardev</h2>
           <span className="text-sm sm:text-lg">
             Full Stack developer and passionate about Technology!
           </span>
@@ -45,7 +45,7 @@ export default function Home() {
                   {name}
                   <div className="flex gap-2">
                     {links.map(({ icon: IconComponent, url }) => (
-                      <Link href={url} className="transition-transform hover:scale-110">
+                      <Link key={url} href={url} className="transition-transform hover:scale-110">
                         <IconComponent size={20} />
                       </Link>
                     ))}
@@ -53,7 +53,7 @@ export default function Home() {
                 </span>
                 <div className="flex flex-wrap gap-1 mt-3">
                   {tags.map((tag) => (
-                    <span className="select-none p-1.5 text-xs bg-zinc-200 dark:bg-zinc-800 rounded-md">
+                    <span key={name+tag} className="select-none p-1.5 text-xs bg-zinc-200 dark:bg-zinc-800 rounded-md">
                       {tag}
                     </span>
                   ))}
