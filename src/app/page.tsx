@@ -1,8 +1,28 @@
 import Link from "next/link";
-import { FaGithub, FaLink } from "react-icons/fa";
 import projects from "../data/projects";
 import social_medias from "../data/social_medias";
 import "./globals.css";
+
+export const metadata = {
+  title: "richaardev's website",
+  openGraph: {
+    siteName: "richaardev",
+    title: "richaardev",
+    type: "website",
+    url: "https://richaar.dev/",
+    images:
+      "https://cdn.discordapp.com/avatars/646416170123132959/a1fbb34ed5bca4847d3de96227ded664.png",
+    description: "Howdly! I'm richaardev, a full stack developer and passionate about Technology!",
+  },
+  twitter: {
+    title: "richaardev's website",
+    description: "Howdly! I'm richaardev, a full stack developer and passionate about Technology!",
+    siteId: "1515896423094620161",
+    creator: "@richaardev",
+    creatorId: "1515896423094620161",
+  },
+  themeColor: "#18181b",
+};
 
 export default function Home() {
   return (
@@ -53,7 +73,10 @@ export default function Home() {
                 </span>
                 <div className="flex flex-wrap gap-1 mt-3">
                   {tags.map((tag) => (
-                    <span key={name+tag} className="select-none p-1.5 text-xs bg-zinc-200 dark:bg-zinc-800 rounded-md">
+                    <span
+                      key={name + tag}
+                      className="select-none p-1.5 text-xs bg-zinc-200 dark:bg-zinc-800 rounded-md"
+                    >
                       {tag}
                     </span>
                   ))}
