@@ -60,7 +60,7 @@ export default function Home() {
                 style={{ backgroundImage: `url(${image})` }}
                 className="w-full bg-center bg-cover border-b-2 cursor-pointer aspect-video border-zinc-200 dark:border-zinc-800"
               ></div>
-              <div className="p-5">
+              <div className="px-3 py-5">
                 <span className="flex gap-3 font-bold">
                   {name}
                   <div className="flex gap-2">
@@ -75,7 +75,7 @@ export default function Home() {
                   {tags.map((tag) => (
                     <span
                       key={name + tag}
-                      className="select-none p-1.5 text-xs bg-zinc-200 dark:bg-zinc-800 rounded-md"
+                      className="select-none px-1.5 py-1 text-xs bg-zinc-200 dark:bg-zinc-800 rounded-md"
                     >
                       {tag}
                     </span>
