@@ -1,22 +1,35 @@
-import { useEffect } from "react";
-import { useLocalStorage } from "./useLocalStorage";
+"use client";
+
+import { useEffect, useState } from "react";
 
 export function useDarkMode(): [boolean, Function] {
-  if (typeof window == "undefined") return [false, () => {}];
+  const [enabledState, setEnabledState] = useState(() => {
+    const localState = localStorage.getItem("dark-mode");
+    if (localState !== null) return localState === "true";
 
-  const [enabledState, setEnabledState] = useLocalStorage("dark-mode-enabled");
-  const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  // if not exists in local storage
-  const enabled = typeof enabledState !== "undefined" ? Boolean(enabledState) : prefersDarkMode;
+    // dark default
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ?? true;
+  });
+
+  const _setEnabledState = (state: boolean) => {
+    setEnabledState(state);
+    console.log("change state");
+    const element = window.document.querySelector("html")!;
+    console.log(state);
+    if (state) {
+      element.classList.add("dark");
+    } else {
+      element.classList.remove("dark");
+    }
+  };
 
   useEffect(() => {
-    const className = "dark";
-    const element = window.document.querySelector("html")!;
-    if (enabled) {
-      element.classList.add(className);
-    } else {
-      element.classList.remove(className);
-    }
-  }, [enabledState, enabled]);
-  return [enabled, setEnabledState];
+    const html = window.document.querySelector("html")!;
+    localStorage.setItem("dark-mode", String(enabledState));
+
+    if (enabledState) html.classList.add("dark");
+    else html.classList.remove("dark");
+  }, [enabledState]);
+
+  return [enabledState, _setEnabledState];
 }
