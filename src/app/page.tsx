@@ -50,19 +50,19 @@ export default function Home() {
       </div>
       <div className="flex flex-col justify-center max-w-5xl px-4 py-16 mx-auto md:px-16">
         <h1 className="text-2xl font-bold underline sm:text-4xl">Projects</h1>
-        <div className="grid grid-cols-1 gap-5 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 pt-10 sm:grid-cols-2">
           {projects.map(({ name, tags, links, image }) => (
             <div
               key={name}
-              className="box-border overflow-hidden border-2 rounded-md shadow-md border-zinc-200 dark:border-zinc-800"
+              className="box-border overflow-hidden w-full border-2 rounded-md shadow-md border-zinc-200 dark:border-zinc-800"
             >
               <div
                 style={{ backgroundImage: `url(${image})` }}
                 className="w-full bg-center bg-cover border-b-2 cursor-pointer aspect-video border-zinc-200 dark:border-zinc-800"
               ></div>
               <div className="px-3 py-5">
-                <span className="flex gap-3 font-bold">
-                  {name}
+                <span className="flex items-center gap-3">
+                  <span className="font-bold text-lg">{name}</span>
                   <div className="flex gap-2">
                     {links.map(({ icon: IconComponent, url }) => (
                       <Link key={url} href={url} className="transition-transform hover:scale-110">
